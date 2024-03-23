@@ -20,7 +20,7 @@ use App\Http\Controllers\AuthController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::post('signup', [AuthController::class,'signup']);
+Route::post('signup', [TechnicienController::class,'addTechniciens']);
 Route::post('login', [AuthController::class,'login']);
 
 
@@ -56,7 +56,7 @@ Route::put('updateTechniciens/{Matricule}',[TechnicienController::class,'updateT
 Route::resource('interventions', InterventionController::class);
 
 
-//get all the interventions 
+//get all the interventions
 Route::get('/interventions',[InterventionController::class,'getInterventions']);
 //add interventions
 Route::post('addInterventions', [InterventionController::class,'addInterventions']);
